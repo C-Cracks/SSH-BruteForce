@@ -10,3 +10,4 @@ Python pwntools is a minimum requirement for running this script.
 Hope you enjoy my noobery ^-^
 
 --C-Cracks
+  linkedin.com/in/courtney-evans99
