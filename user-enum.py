@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import argparse;from pwn import *;import paramiko;import time;import pyfiglet
-
 usr_arr=[];pass_arr=[]
+
 
 parser=argparse.ArgumentParser(description="Well done, you found the help menu. ^-^")
 parser.add_argument("--users",help="Add the absolute path of the user file here (/root/users.txt)");
@@ -11,12 +11,15 @@ parser.add_argument("--host",help="The IP address of the remote SSH server, defa
 parser.add_argument("--port", help="The port of the SSH server -default is 22.",type=int,default=22)
 args=parser.parse_args()
 
+
 try:
 	u_file=args.users.strip();p_file=args.passes.strip();host=args.host.strip();p=args.port
 except AttributeError:
 	print("Check --help, little Nooby Doo. :>\n")
 	quit()
+
 print("User file:",u_file,"Password file: ",p_file,"\n")
+
 
 # loop through files and store lines in arrays.
 usrs=open(u_file,"r")
@@ -29,16 +32,15 @@ for l in passwords:
 	p=l.strip();pass_arr.append(p)
 passwords.close()
 
-# use of ASCII art in banner if user has pyfiglet module
+
 try:
 	banner=pyfiglet.figlet_format("C-Cracks SSH Enumeration")
 except:
 	banner="C-Cracks SSH Enumeration"
-
 print(banner)
 
-i=1;x=0;u=0
 
+i=1;x=0;u=0
 while i==1:
 	try:
 		print("User:",usr_arr[u],"\nPassword: ",pass_arr[x])
@@ -65,4 +67,5 @@ while i==1:
 		sleep(1);continue
 	i+=1
 
+	
 print("Enumeration finished.\n");quit()
