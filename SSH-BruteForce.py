@@ -34,9 +34,9 @@ passwords.close()
 
 
 try:
-	banner=pyfiglet.figlet_format("C-Cracks SSH Enumeration")
+	banner=pyfiglet.figlet_format("C-Cracks SSH Brute-Force")
 except:
-	banner="C-Cracks SSH Enumeration"
+	banner="C-Cracks SSH Brute-Force"
 print(banner)
 
 
