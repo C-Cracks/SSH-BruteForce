@@ -68,4 +68,4 @@ while i==1:
 	i+=1
 
 	
-print("Enumeration finished.\n");quit()
+print("Brute-force finished.\n");quit()
