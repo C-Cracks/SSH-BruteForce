@@ -22,7 +22,7 @@ except AttributeError:
 	print("Check --help, little Nooby Doo. :>\n")
 	quit()
 
-print("User file:",u_file,"Password file: ",p_file,"\n")
+print"User file:",u_file,"| Password file:",p_file,"\n"
 
 
 # loop through files and store lines in arrays.
