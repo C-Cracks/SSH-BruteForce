@@ -48,7 +48,7 @@ i=1;x=0;u=0
 while i==1:
 	try:
 		print "User:",usr_arr[u],"| Password:",pass_arr[x]
-		sh=ssh(usr_arr[u], host, password=pass_arr[x], port=args.port)
+		sh=ssh(username=usr_arr[u], hostname=host, password=pass_arr[x], port=args.port)
 		print("May have found valid credentials.\n")
 		break
 
