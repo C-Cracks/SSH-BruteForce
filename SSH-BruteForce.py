@@ -68,7 +68,7 @@ while i==1:
 		quit()
 	# repeat previous attempt if delivery failed -sleep is used for safe measure
 	except:
-		sleep(1);continue
+		sleep(0.3);continue
 	i+=1
 
 	
