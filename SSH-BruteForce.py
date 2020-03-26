@@ -12,7 +12,7 @@ parser.add_argument("--users",help="Add the absolute path of the user file here 
 parser.add_argument("--passes",help="Add the absolute path of the password file here (/root/passwords.txt)")
 parser.add_argument("--host",help="The IP address of the remote SSH server, default is your machine (localhost).",default="127.0.0.1")
 parser.add_argument("--port", help="The port of the SSH server -default is 22.",type=int,default=22)
-parser.add_argument("--cmd", help="The command to execute upon successful authentication to the SSH server.",default="")
+parser.add_argument("--cmd", help="The command to execute upon successful authentication to the SSH server. Easiest to provide as a string (wrapped with \"\""")",default="")
 args=parser.parse_args()
 
 try:	u_file=args.users.strip();p_file=args.passes.strip();host=args.host.strip();cmd=args.cmd.strip();p=args.port
