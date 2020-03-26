@@ -14,3 +14,5 @@ Hope you enjoy my noobery ^-^
 --C-Cracks
 
 linkedin.com/in/courtney-evans99
+
+UPDATE: You can now execute a line of commands upon successful authentication to the server and view the result of the provided command.
