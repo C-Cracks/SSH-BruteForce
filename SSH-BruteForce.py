@@ -41,7 +41,9 @@ while i==1:
 		client.connect(username=usr_arr[u], hostname=host, password=pass_arr[x], port=args.port)
 		print("May have found valid credentials.\n")
 		
-		if cmd!="":	stdin, stdout, stderr=client.exec_command(cmd,get_pty=True) ; print stdout.readlines()
+		if cmd!="":
+			stdin, stdout, stderr=client.exec_command(cmd,get_pty=True)
+			for r in stdout:	print str(r)
 		
 		break
 	except (paramiko.ssh_exception.AuthenticationException):
